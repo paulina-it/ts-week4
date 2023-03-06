@@ -27,18 +27,30 @@ class Student extends Person {
             this.name = name;
             this.age = age;
     }
+
+    getScholarship(avMark:number) :number {
+        if (avMark == 5) { return 200}
+        else return 150;
+    }
 }
 
-class Aspirant extends Student {
+class Aspirant extends Person {
+    protected averageMark: number;
     protected courseworkName: string;
 
     constructor(name: string,
         age: number, isStudent: true, averageMark: number, courseworkName: string) {
-            super(name, age, isStudent, averageMark);
+            super(name, age, isStudent);
             this.isStudent = isStudent;
             this.averageMark = averageMark;
             this.name = name;
             this.age = age;
             this.courseworkName = courseworkName;
     }
+
+    getScholarship(avMark:number) :number {
+        if (avMark == 5) { return 300}
+        else return 250;
+    }
 }
+

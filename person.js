@@ -34,12 +34,19 @@ var Student = /** @class */ (function (_super) {
         _this.age = age;
         return _this;
     }
+    Student.prototype.getScholarship = function (avMark) {
+        if (avMark == 5) {
+            return 200;
+        }
+        else
+            return 150;
+    };
     return Student;
 }(Person));
 var Aspirant = /** @class */ (function (_super) {
     __extends(Aspirant, _super);
     function Aspirant(name, age, isStudent, averageMark, courseworkName) {
-        var _this = _super.call(this, name, age, isStudent, averageMark) || this;
+        var _this = _super.call(this, name, age, isStudent) || this;
         _this.isStudent = isStudent;
         _this.averageMark = averageMark;
         _this.name = name;
@@ -48,4 +55,4 @@ var Aspirant = /** @class */ (function (_super) {
         return _this;
     }
     return Aspirant;
-}(Student));
+}(Person));
